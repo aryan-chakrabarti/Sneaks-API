@@ -14,12 +14,16 @@
 
 
  </p>
+ 
+ <h1>
+NOTICE: This is a fork of the original Sneaks-API, written by druv5319. I took this API and improved it to account for bugs that were not addressed. The original README.md is below:
+</h1>
 
 A StockX API, FlightClub API, Goat API, and Stadium Goods API all in one.
 
 Sneaks API is a sneaker API built using Node.JS, Express, and Got. The Sneaks API allows users to get essential sneaker content such as images, product links and even prices from resell sites while also collecting data and storing it within a database. This API mainly scrapes StockX for sneaker information and then asynchronously scrapes Stadium Goods, Goat, and Flight Club for additional sneaker information such as images and its respective resell price. This API outputs a sneaker object of the following variables:
 
-**UPDATE 1.2.3**: Updated and fixed the Goat API to reflect their API changes. Removed the web server (localhost:4000) the package creates.
+**UPDATE 1.2.4** (Not part of the original README.md file, I made this change myself): Fixed issues with shoes having multiple SKUs and extra requests causing multiple errors. Additionally removed Flight Club and Stadium Goods as they did not work as intended in the original API and caused HTTP 530 error codes. 
 
   - Sneaker Name
   - Colorway
