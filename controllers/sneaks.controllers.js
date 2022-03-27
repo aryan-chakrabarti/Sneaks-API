@@ -123,8 +123,26 @@ module.exports = class Sneaks {
         shoeID1 = shoeIDarr[0];
         shoeID2 = shoeIDarr[1];
       }
-      if (error || !(products[0].styleID.toLowerCase().includes(shoeID1.toLowerCase()) || products[0].styleID.toLowerCase().includes(shoeID2.toLowerCase()))) {
-        console.log(new Error("No Products Found"));
+      var nodashproductsku = products[0].styleID.toLowerCase();
+      var nodashid1 = shoeID1.toLowerCase();
+      var nodashid2 = shoeID2.toLowerCase();
+      if (nodashproductsku.includes("-")) {
+        var nodashproductarr = nodashproductsku.split("-");
+        nodashproductsku = "";
+        for (let i = 0; i < nodashproductarr.length; i++) {
+          nodashproductsku += nodashproductarr[i];
+        }
+      }
+      if (nodashid1.includes("-")) {
+        var nodashid1arr = nodashid1.split("-");
+        nodashid1 = nodashid1arr[0] + nodashid1arr[1];
+      }
+      if (nodashid2.includes("-")) {
+        var nodashid2arr = nodashid2.split("-");
+        nodashid2 = nodashid2arr[0] + nodashid2arr[1];
+      }
+      if (error || !(nodashproductsku.includes(nodashid1) || nodashproductsku.includes(nodashid2))) {
+        // console.log(new Error("No Products Found"));
         callback(new Error("No Products Found"), null);
         return;
       }
