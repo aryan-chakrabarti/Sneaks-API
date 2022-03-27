@@ -4,14 +4,14 @@ const request = require('request');
 
 
 module.exports = {
-  getLink: async function (shoe, callback) {
+  getLink: async function (shoe, keyword, callback) {
     try {
       const response = await got.post('https://2fwotdvm2o-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20vanilla%20JavaScript%20(lite)%203.25.1%3Breact%20(16.9.0)%3Breact-instantsearch%20(6.2.0)%3BJS%20Helper%20(3.1.0)&x-algolia-application-id=2FWOTDVM2O&x-algolia-api-key=ac96de6fef0e02bb95d433d8d5c7038a', {
         headers: {
           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15',
           'Content-Type': 'application/json'
         },
-        body: '{"requests":[{"indexName":"product_variants_v2","params":"distinct=true&maxValuesPerFacet=1&page=0&query=' + shoe.styleID + '&facets=%5B%22instant_ship_lowest_price_cents"}]}',
+        body: '{"requests":[{"indexName":"product_variants_v2","params":"distinct=true&maxValuesPerFacet=1&page=0&query=' + keyword + '&facets=%5B%22instant_ship_lowest_price_cents"}]}',
         http2: true,
       });
       var json = JSON.parse(response.body);
