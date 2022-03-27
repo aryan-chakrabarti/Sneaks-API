@@ -19,7 +19,7 @@
 NOTICE: This is a fork of the original Sneaks-API, written by druv5319. I took this API and improved it to account for bugs that were not addressed. The original README.md is below:
 </h1>
 
-A StockX API, FlightClub API, Goat API, and Stadium Goods API all in one.
+A StockX API and Goat API all in one.
 
 Sneaks API is a sneaker API built using Node.JS, Express, and Got. The Sneaks API allows users to get essential sneaker content such as images, product links and even prices from resell sites while also collecting data and storing it within a database. This API mainly scrapes StockX for sneaker information and then asynchronously scrapes Stadium Goods, Goat, and Flight Club for additional sneaker information such as images and its respective resell price. This API outputs a sneaker object of the following variables:
 
